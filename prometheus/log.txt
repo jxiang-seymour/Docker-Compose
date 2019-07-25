@@ -1,0 +1,59 @@
+Attaching to prometheus_prometheus_1, prometheus_alertmanager_1, prometheus_node-exporter_1
+[36mprometheus_1     |[0m level=info ts=2019-07-25T22:10:46.790Z caller=main.go:293 msg="no time or size retention was set so using the default time retention" duration=15d
+[36mprometheus_1     |[0m level=info ts=2019-07-25T22:10:46.790Z caller=main.go:329 msg="Starting Prometheus" version="(version=2.11.1, branch=HEAD, revision=e5b22494857deca4b806f74f6e3a6ee30c251763)"
+[36mprometheus_1     |[0m level=info ts=2019-07-25T22:10:46.790Z caller=main.go:330 build_context="(go=go1.12.7, user=root@d94406f2bb6f, date=20190710-13:51:17)"
+[36mprometheus_1     |[0m level=info ts=2019-07-25T22:10:46.790Z caller=main.go:331 host_details="(Linux 4.15.0-54-generic #58-Ubuntu SMP Mon Jun 24 10:55:24 UTC 2019 x86_64 f013a648dd59 (none))"
+[36mprometheus_1     |[0m level=info ts=2019-07-25T22:10:46.790Z caller=main.go:332 fd_limits="(soft=1048576, hard=1048576)"
+[36mprometheus_1     |[0m level=info ts=2019-07-25T22:10:46.790Z caller=main.go:333 vm_limits="(soft=unlimited, hard=unlimited)"
+[36mprometheus_1     |[0m level=info ts=2019-07-25T22:10:46.791Z caller=main.go:652 msg="Starting TSDB ..."
+[36mprometheus_1     |[0m level=info ts=2019-07-25T22:10:46.791Z caller=web.go:448 component=web msg="Start listening for connections" address=0.0.0.0:9090
+[36mprometheus_1     |[0m level=info ts=2019-07-25T22:10:46.796Z caller=main.go:667 fs_type=EXT4_SUPER_MAGIC
+[36mprometheus_1     |[0m level=info ts=2019-07-25T22:10:46.796Z caller=main.go:668 msg="TSDB started"
+[36mprometheus_1     |[0m level=info ts=2019-07-25T22:10:46.796Z caller=main.go:738 msg="Loading configuration file" filename=/etc/prometheus/prometheus.yml
+[36mprometheus_1     |[0m level=info ts=2019-07-25T22:10:46.798Z caller=main.go:766 msg="Completed loading of configuration file" filename=/etc/prometheus/prometheus.yml
+[36mprometheus_1     |[0m level=info ts=2019-07-25T22:10:46.798Z caller=main.go:621 msg="Server is ready to receive web requests."
+[33malertmanager_1   |[0m level=info ts=2019-07-25T22:10:47.928Z caller=main.go:197 msg="Starting Alertmanager" version="(version=0.18.0, branch=HEAD, revision=1ace0f76b7101cccc149d7298022df36039858ca)"
+[33malertmanager_1   |[0m level=info ts=2019-07-25T22:10:47.928Z caller=main.go:198 build_context="(go=go1.12.6, user=root@868685ed3ed0, date=20190708-14:31:49)"
+[33malertmanager_1   |[0m level=info ts=2019-07-25T22:10:47.928Z caller=cluster.go:161 component=cluster msg="setting advertise address explicitly" addr=192.168.6.35 port=9094
+[33malertmanager_1   |[0m level=info ts=2019-07-25T22:10:47.929Z caller=cluster.go:623 component=cluster msg="Waiting for gossip to settle..." interval=2s
+[33malertmanager_1   |[0m level=info ts=2019-07-25T22:10:47.949Z caller=coordinator.go:119 component=configuration msg="Loading configuration file" file=/etc/alertmanager/config.yml
+[33malertmanager_1   |[0m level=info ts=2019-07-25T22:10:47.950Z caller=coordinator.go:131 component=configuration msg="Completed loading of configuration file" file=/etc/alertmanager/config.yml
+[33malertmanager_1   |[0m level=info ts=2019-07-25T22:10:47.952Z caller=main.go:429 msg=Listening address=:9093
+[33malertmanager_1   |[0m level=info ts=2019-07-25T22:10:49.929Z caller=cluster.go:648 component=cluster msg="gossip not settled" polls=0 before=0 now=1 elapsed=2.000090765s
+[33malertmanager_1   |[0m level=info ts=2019-07-25T22:10:57.929Z caller=cluster.go:640 component=cluster msg="gossip settled; proceeding" elapsed=10.000609389s
+[32mnode-exporter_1  |[0m time="2019-07-25T22:10:45Z" level=info msg="Starting node_exporter (version=0.18.1, branch=HEAD, revision=3db77732e925c08f675d7404a8c46466b2ece83e)" source="node_exporter.go:156"
+[32mnode-exporter_1  |[0m time="2019-07-25T22:10:45Z" level=info msg="Build context (go=go1.12.5, user=root@b50852a1acba, date=20190604-16:41:18)" source="node_exporter.go:157"
+[32mnode-exporter_1  |[0m time="2019-07-25T22:10:45Z" level=info msg="Enabled collectors:" source="node_exporter.go:97"
+[32mnode-exporter_1  |[0m time="2019-07-25T22:10:45Z" level=info msg=" - arp" source="node_exporter.go:104"
+[32mnode-exporter_1  |[0m time="2019-07-25T22:10:45Z" level=info msg=" - bcache" source="node_exporter.go:104"
+[32mnode-exporter_1  |[0m time="2019-07-25T22:10:45Z" level=info msg=" - bonding" source="node_exporter.go:104"
+[32mnode-exporter_1  |[0m time="2019-07-25T22:10:45Z" level=info msg=" - conntrack" source="node_exporter.go:104"
+[32mnode-exporter_1  |[0m time="2019-07-25T22:10:45Z" level=info msg=" - cpu" source="node_exporter.go:104"
+[32mnode-exporter_1  |[0m time="2019-07-25T22:10:45Z" level=info msg=" - cpufreq" source="node_exporter.go:104"
+[32mnode-exporter_1  |[0m time="2019-07-25T22:10:45Z" level=info msg=" - diskstats" source="node_exporter.go:104"
+[32mnode-exporter_1  |[0m time="2019-07-25T22:10:45Z" level=info msg=" - edac" source="node_exporter.go:104"
+[32mnode-exporter_1  |[0m time="2019-07-25T22:10:45Z" level=info msg=" - entropy" source="node_exporter.go:104"
+[32mnode-exporter_1  |[0m time="2019-07-25T22:10:45Z" level=info msg=" - filefd" source="node_exporter.go:104"
+[32mnode-exporter_1  |[0m time="2019-07-25T22:10:45Z" level=info msg=" - filesystem" source="node_exporter.go:104"
+[32mnode-exporter_1  |[0m time="2019-07-25T22:10:45Z" level=info msg=" - hwmon" source="node_exporter.go:104"
+[32mnode-exporter_1  |[0m time="2019-07-25T22:10:45Z" level=info msg=" - infiniband" source="node_exporter.go:104"
+[32mnode-exporter_1  |[0m time="2019-07-25T22:10:45Z" level=info msg=" - ipvs" source="node_exporter.go:104"
+[32mnode-exporter_1  |[0m time="2019-07-25T22:10:45Z" level=info msg=" - loadavg" source="node_exporter.go:104"
+[32mnode-exporter_1  |[0m time="2019-07-25T22:10:45Z" level=info msg=" - mdadm" source="node_exporter.go:104"
+[32mnode-exporter_1  |[0m time="2019-07-25T22:10:45Z" level=info msg=" - meminfo" source="node_exporter.go:104"
+[32mnode-exporter_1  |[0m time="2019-07-25T22:10:45Z" level=info msg=" - netclass" source="node_exporter.go:104"
+[32mnode-exporter_1  |[0m time="2019-07-25T22:10:45Z" level=info msg=" - netdev" source="node_exporter.go:104"
+[32mnode-exporter_1  |[0m time="2019-07-25T22:10:45Z" level=info msg=" - netstat" source="node_exporter.go:104"
+[32mnode-exporter_1  |[0m time="2019-07-25T22:10:45Z" level=info msg=" - nfs" source="node_exporter.go:104"
+[32mnode-exporter_1  |[0m time="2019-07-25T22:10:45Z" level=info msg=" - nfsd" source="node_exporter.go:104"
+[32mnode-exporter_1  |[0m time="2019-07-25T22:10:45Z" level=info msg=" - pressure" source="node_exporter.go:104"
+[32mnode-exporter_1  |[0m time="2019-07-25T22:10:45Z" level=info msg=" - sockstat" source="node_exporter.go:104"
+[32mnode-exporter_1  |[0m time="2019-07-25T22:10:45Z" level=info msg=" - stat" source="node_exporter.go:104"
+[32mnode-exporter_1  |[0m time="2019-07-25T22:10:45Z" level=info msg=" - textfile" source="node_exporter.go:104"
+[32mnode-exporter_1  |[0m time="2019-07-25T22:10:45Z" level=info msg=" - time" source="node_exporter.go:104"
+[32mnode-exporter_1  |[0m time="2019-07-25T22:10:45Z" level=info msg=" - timex" source="node_exporter.go:104"
+[32mnode-exporter_1  |[0m time="2019-07-25T22:10:45Z" level=info msg=" - uname" source="node_exporter.go:104"
+[32mnode-exporter_1  |[0m time="2019-07-25T22:10:45Z" level=info msg=" - vmstat" source="node_exporter.go:104"
+[32mnode-exporter_1  |[0m time="2019-07-25T22:10:45Z" level=info msg=" - xfs" source="node_exporter.go:104"
+[32mnode-exporter_1  |[0m time="2019-07-25T22:10:45Z" level=info msg=" - zfs" source="node_exporter.go:104"
+[32mnode-exporter_1  |[0m time="2019-07-25T22:10:45Z" level=info msg="Listening on :9100" source="node_exporter.go:170"

@@ -1,0 +1,26 @@
+global:
+  # The smarthost and SMTP sender used for mail notifications.
+  smtp_smarthost: '35.182.144.37:25'
+  smtp_from: 'no-reply@biningtech.ca'
+  smtp_auth_username: ''
+  smtp_auth_password: ''
+  smtp_require_tls: false
+
+
+# The directory from which notification templates are read.
+templates: 
+- '/etc/alertmanager/template/*.tmpl'
+
+# The root route on which each incoming alert enters.
+route:
+  # If an alert has successfully been sent, wait 'repeat_interval' to
+  # resend them.
+  repeat_interval: 1h
+
+  # A default receiver
+  receiver: bti-dev-team
+
+receivers:
+- name: 'bti-dev-team'
+  email_configs:
+  - to: 'joey.xiang@seymourhealth.ca'

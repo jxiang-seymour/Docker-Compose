@@ -1,0 +1,34 @@
+version: "3.7" # https://docs.docker.com/compose/compose-file/
+
+volumes:
+    rabitmq-plugin:
+        labels:
+            com.example.rabitmq-plugin.description: Rabbitmq plugin data
+            com.example.rabitmq-plugin.department: DevOps
+
+networks:
+    back:
+        #driver: "bridge"
+        ipam:
+            config:
+                - subnet: "192.168.6.24/29"
+
+services:
+    rabbit1:
+        image: rabbitmq:3-management
+        hostname: "rabbit1"
+        environment:
+            RABBITMQ_ERLANG_COOKIE: "SWQOKODSQALRPCLNMEQG"
+            RABBITMQ_DEFAULT_USER: "rabbitmq"
+            RABBITMQ_DEFAULT_PASS: "rabbitmq"
+            RABBITMQ_DEFAULT_VHOST: "/"
+        networks:
+            - back
+        ports:
+            - "15672:15672"
+            - "5672:5672"
+        labels:
+            NAME: "rabbitmq1"
+
+        volumes:
+            - rabitmq-plugin:/etc/rabbitmq

@@ -1,0 +1,62 @@
+version: "3.7" # https://docs.docker.com/compose/compose-file/
+
+volumes:
+    mysql-config:
+        labels:
+            com.example.mysql-config.description: MySQL config
+            com.example.mysql-config.department: DevOps
+    mysql-data:
+        labels:
+            com.example.mysql-data.description: MySQL datadir
+            com.example.mysql-data.department: DevOps
+    gitea-data:
+        labels:
+            com.example.gitea-data.description: Gitea datadir
+            com.example.gitea-data.department: DevOps
+
+networks:
+    back:
+        #driver: "bridge"
+        ipam:
+            config:
+                - subnet: "192.168.6.8/29"
+
+services:
+    mysql:
+        build:
+            context: .
+            dockerfile: image/mysql/Dockerfile
+        image: ${PROJECT_NAME}/${MYSQL_TAG}
+        volumes:
+            - mysql-config:/etc/mysql
+            - mysql-data:/var/lib/mysql
+        networks:
+            - back
+        environment:
+            #- TZ=Asia/Shanghai
+            #- MYSQL_ALLOW_EMPTY_PASSWORD=true
+            - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+            - MYSQL_DATABASE=${MYSQL_DATABASE}
+            - MYSQL_USER=${MYSQL_USER}
+            - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+        #command: mysqld --skip-grant-tables
+        #command: mysqld --bind-address=127.0.0.1 --port=3309 --mysqlx-bind-address=127.0.0.1 --mysqlx-port=33090
+        restart: always
+    gitea:
+        build:
+            context: .
+            dockerfile: image/gitea/Dockerfile
+            args:
+                GITEA_TAG: ${GITEA_TAG}
+        image: ${PROJECT_NAME}/${GITEA_TAG}
+        volumes:
+            - gitea-data:/data
+        networks:
+            - back
+        ports:
+            - "8022:22"
+            - "3000:3000"
+        restart: always
+        sysctls:
+            - net.ipv4.ip_unprivileged_port_start=80
+            - net.ipv6.conf.all.disable_ipv6=1
