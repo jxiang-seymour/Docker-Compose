@@ -1,7 +1,7 @@
 global:
   # The smarthost and SMTP sender used for mail notifications.
-  smtp_smarthost: '35.182.144.37:25'
-  smtp_from: 'no-reply@biningtech.ca'
+  smtp_smarthost: '<host_ip>'
+  smtp_from: '<sending@fromaddress>'
   smtp_auth_username: ''
   smtp_auth_password: ''
   smtp_require_tls: false
@@ -18,9 +18,9 @@ route:
   repeat_interval: 1h
 
   # A default receiver
-  receiver: bti-dev-team
+  receiver: <receiver_name1>
 
 receivers:
-- name: 'bti-dev-team'
+- name: '<receiver_name1>'
   email_configs:
-  - to: 'joey.xiang@seymourhealth.ca'
+  - to: '<destionation_email>'
